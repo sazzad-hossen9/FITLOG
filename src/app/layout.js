@@ -1,14 +1,15 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Oswald, Inter } from "next/font/google";
 import "./globals.css";
+import NavBer from "./components/shared/NavBer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const oswald = Oswald({
+  variable: "--font-oswald",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata = {
@@ -20,9 +21,13 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      data-theme="light"
+      className={`${oswald.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col  bg-fit-theme font-inter">
+        <NavBer />
+        {children}
+      </body>
     </html>
   );
 }
