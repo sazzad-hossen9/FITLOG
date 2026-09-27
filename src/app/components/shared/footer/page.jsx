@@ -3,7 +3,7 @@ import logo from "@/assets/logo.png";
 export default function FooterPage() {
   return (
     <div className="border-t border-fit-accent mt-16">
-      <div className="container mx-auto px-3 flex justify-between items-center py-10.5">
+      <div className="container mx-auto px-3 gap-10 flex justify-between items-center py-10.5">
         <div className=" flex justify-center gap-3 items-center ">
           <Image src={logo} alt="logo" />
           <h2 className="text-fit-white font-extrabold text-sm loading-[20px] font-oswald">
@@ -11,7 +11,7 @@ export default function FooterPage() {
           </h2>
         </div>
         <div>
-          <p className="text-fit-accent tex-sm">
+          <p className="text-fit-accent text-[12px] md:text-sm ">
             © 2026 FitLog — Workout Library. Train hard, log honest.
           </p>
         </div>

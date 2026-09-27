@@ -3,6 +3,7 @@ import { CalendarPlus, Bookmark } from "lucide-react";
 import getData from "@/app/data";
 
 export default async function ExerciseDetailPage({ params }) {
+  
   const { id } = await params;
   const exercises = await getData();
   const exercise = exercises.find((item) => item.id === Number(id));
@@ -27,15 +28,15 @@ export default async function ExerciseDetailPage({ params }) {
   } = exercise;
 
   return (
-    <div className="container px-5 mx-auto my-10">
-      <div className="grid md:grid-cols-2 gap-10">
-        <div className="relative w-full h-[100%] rounded-2xl overflow-hidden">
+    <div className="container px-5 mx-auto my-10 mt-25">
+      <div className="grid  md:grid-cols-2 gap-10">
+        <div className="rounded-2xl overflow-hidden">
           <Image
             src={image}
             alt={name}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 50vw"
+            width={600}
+            height={400}
+            className="w-full h-auto object-cover"
           />
         </div>
 
@@ -131,11 +132,11 @@ export default async function ExerciseDetailPage({ params }) {
           </ol>
 
           <div className="flex gap-4">
-            <button className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-lime-400 text-black font-semibold text-sm hover:bg-transparent hover:text-fit-white hover:border-fit-primary border transition-colors">
+            <button className="flex text-[12px] md:text-[14px] items-center gap-2 px-2 md:px-5 py-2.5 rounded-lg bg-lime-400 text-black font-semibold text-sm hover:bg-transparent hover:text-fit-white hover:border-fit-primary border transition-colors">
               <CalendarPlus size={16} />
               Add to today s plan
             </button>
-            <button className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-fit-accent text-fit-white font-semibold text-sm hover:bg-fit-primary hover:text-fit-black transition-colors">
+            <button className="flex text-[12px] md:text-[14px] items-center gap-2 px-5 py-2.5 rounded-lg border border-fit-accent text-fit-white font-semibold text-sm hover:bg-fit-primary hover:text-fit-black transition-colors">
               <Bookmark size={16} />
               Save for later
             </button>

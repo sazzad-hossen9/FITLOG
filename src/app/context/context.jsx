@@ -1,9 +1,7 @@
 "use client";
-import { children, createContext, SetStateAction, useState } from "react";
-
-import React from "react";
-export const FitLogContext = createContext < IBookContext > {};
-export default function BooksProvider({ children }) {
+import { createContext, useState } from "react";
+export const FitLogContext = createContext({});
+export default function FitLogProvide({ children }) {
   const [plan, setPlan] = useState([]);
   const [save, setSave] = useState([]);
   const allContextValue = {
@@ -13,10 +11,8 @@ export default function BooksProvider({ children }) {
     setSave,
   };
   return (
-    <div>
-      <FitLogContext.Provider value={allContextValue}>
-        {children}
-      </FitLogContext.Provider>
-    </div>
+    <FitLogContext.Provider value={allContextValue}>
+      {children}
+    </FitLogContext.Provider>
   );
 }
