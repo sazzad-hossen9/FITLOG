@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { CalendarPlus, Bookmark } from "lucide-react";
 import getData from "@/app/data";
+import PlanBtn from "@/app/components/detaildbtn/planBtn";
+import SaveBtn from "@/app/components/detaildbtn/savBtn";
 
 export default async function ExerciseDetailPage({ params }) {
-  
   const { id } = await params;
   const exercises = await getData();
   const exercise = exercises.find((item) => item.id === Number(id));
@@ -47,9 +48,9 @@ export default async function ExerciseDetailPage({ params }) {
           <p className="text-fit-accent text-sm mb-4">{description}</p>
 
           <div className="flex gap-2 mb-6">
-            {muscleGroups.map((group) => (
+            {muscleGroups.map((group, ind) => (
               <span
-                key={group}
+                key={ind}
                 className="px-3 py-1 rounded-full bg-lime-400 text-black text-xs font-bold uppercase tracking-wide"
               >
                 {group}
@@ -132,14 +133,8 @@ export default async function ExerciseDetailPage({ params }) {
           </ol>
 
           <div className="flex gap-4">
-            <button className="flex text-[12px] md:text-[14px] items-center gap-2 px-2 md:px-5 py-2.5 rounded-lg bg-lime-400 text-black font-semibold text-sm hover:bg-transparent hover:text-fit-white hover:border-fit-primary border transition-colors">
-              <CalendarPlus size={16} />
-              Add to today s plan
-            </button>
-            <button className="flex text-[12px] md:text-[14px] items-center gap-2 px-5 py-2.5 rounded-lg border border-fit-accent text-fit-white font-semibold text-sm hover:bg-fit-primary hover:text-fit-black transition-colors">
-              <Bookmark size={16} />
-              Save for later
-            </button>
+            <PlanBtn exercise={exercise} />
+            <SaveBtn exercise={exercise} />
           </div>
         </div>
       </div>

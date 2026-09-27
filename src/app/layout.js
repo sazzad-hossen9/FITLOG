@@ -3,6 +3,7 @@ import "./globals.css";
 import NavBer from "./components/shared/NavBer";
 import FooterPage from "./components/shared/footer/page";
 import FitLogProvide from "./context/context";
+import { ToastContainer } from "react-toastify";
 
 const oswald = Oswald({
   variable: "--font-oswald",
@@ -30,7 +31,7 @@ export default function RootLayout({ children }) {
         <FitLogProvide>
           <NavBer />
           {children}
-          <FooterPage />
+          <FooterPage /> <ToastContainer />
         </FitLogProvide>
       </body>
     </html>

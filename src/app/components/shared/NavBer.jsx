@@ -1,7 +1,13 @@
+"use client";
+
 import Link from "next/link";
-import logo from "@/assets/logo.png";
 import Image from "next/image";
+import logo from "@/assets/logo.png";
+import { useContext } from "react";
+import { FitLogContext } from "@/app/context/context";
+
 export default function NavBer() {
+  const { plan, save } = useContext(FitLogContext);
   const navLink = (
     <>
       <li>
@@ -11,7 +17,7 @@ export default function NavBer() {
       </li>
 
       <li>
-        <Link href="/" className="nav-link ">
+        <Link href="/myplane" className="nav-link ">
           My Plan
         </Link>
       </li>
@@ -64,13 +70,13 @@ export default function NavBer() {
           <Link href="/" className="text-fit-accent text-sx">
             Plan{" "}
             <span className="hover:bg-fit-primary border hover:text-fit-black font-bold text-fit-white p-1 rounded-full  px-2 ml-2">
-              0
+              {plan.length}
             </span>
           </Link>
           <Link href="/" className="text-sx text-fit-accent">
             Saved{" "}
             <span className="hover:bg-fit-primary border hover:text-fit-black font-bold text-fit-white  p-1 rounded-full px-2  ml-2">
-              0
+              {save.length}
             </span>
           </Link>
         </div>
