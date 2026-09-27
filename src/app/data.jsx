@@ -1,6 +1,10 @@
+import next from "next";
+
 const getData = async () => {
   try {
-    const res = await fetch("https://api.api-store.workers.dev/api/fitlog");
+    const res = await fetch("https://api.api-store.workers.dev/api/fitlog", {
+      next: { revalidate: 60 },
+    });
 
     if (!res.ok) {
       throw new Error("Data fetch not working");

@@ -30,8 +30,11 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col  bg-fit-theme font-inter">
         <FitLogProvide>
           <NavBer />
-          {children}
-          <FooterPage /> <ToastContainer />
+          <main className="flex-1">
+            {children}
+            <ToastContainer />
+          </main>
+          <FooterPage />
         </FitLogProvide>
       </body>
     </html>

@@ -40,7 +40,7 @@ export default function MyPlanPage() {
   };
 
   return (
-    <div className="container px-5 mx-auto my-10">
+    <div className="container px-5 mx-auto my-10 mt-25">
       <h1 className="font-oswald font-bold text-3xl text-fit-white uppercase mb-1">
         My Plan
       </h1>
@@ -48,7 +48,7 @@ export default function MyPlanPage() {
         Cap of five lifts for today. Finish them, then load more.
       </p>
 
-      <div className="grid grid-cols-3 gap-6 bg-[#141414] border border-white/5 rounded-2xl p-6 mb-6">
+      <div className="grid grid-cols-3 gap-6 bg-fit-secondary border border-white/5 rounded-2xl p-6 mb-6">
         <div>
           <p className="text-xs text-fit-accent mb-1">Exercises</p>
           <p className="text-2xl font-bold text-lime-400">
@@ -66,11 +66,13 @@ export default function MyPlanPage() {
       </div>
 
       <div className="flex items-center justify-between mb-4">
-        <div className="flex gap-2 bg-[#141414] border border-white/5 rounded-lg p-1">
+        <div className="flex gap-2 bg-fit-secondary border border-white/5 rounded-lg p-1">
           <button
             onClick={() => setActiveTab("plan")}
             className={`px-4 py-1.5 rounded-md text-sm font-semibold ${
-              activeTab === "plan" ? "bg-white text-black" : "text-fit-accent"
+              activeTab === "plan"
+                ? "bg-fit-white text-black"
+                : "text-fit-accent"
             }`}
           >
             Today s Plan
@@ -79,7 +81,7 @@ export default function MyPlanPage() {
             onClick={() => setActiveTab("save")}
             className={`px-4 py-1.5 rounded-md text-sm font-semibold ${
               activeTab === "save"
-                ? "bg-fit-white text-fit-white"
+                ? "bg-fit-white text-black"
                 : "text-fit-accent"
             }`}
           >

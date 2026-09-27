@@ -12,7 +12,7 @@ export default function PlanListItem({
     exercise;
 
   return (
-    <div className="flex flex-col md:flex-row md:items-center md:justify-between bg-[#141414] border border-white/5 rounded-xl px-4 py-3 gap-4">
+    <div className="flex flex-col md:flex-row md:items-center md:justify-between bg-fit-secondary  border border-white/5 rounded-xl px-4 py-3 gap-4">
       <div className="flex items-center gap-4">
         <div className="relative w-14 h-14 rounded-lg overflow-hidden shrink-0">
           <Image
