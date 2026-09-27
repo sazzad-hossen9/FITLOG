@@ -18,7 +18,7 @@ export default function NavBer() {
     </>
   );
   return (
-    <div className="shadow-sm bg-transparent ">
+    <div className="shadow-sm  fixed top-0 left-0 w-full z-50 bg-fit-black/50">
       <div className="navbar container mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">

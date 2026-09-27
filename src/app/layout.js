@@ -1,6 +1,8 @@
 import { Oswald, Inter } from "next/font/google";
 import "./globals.css";
 import NavBer from "./components/shared/NavBer";
+import FooterPage from "./components/shared/footer/page";
+import { FitLogContext } from "./context/context";
 
 const oswald = Oswald({
   variable: "--font-oswald",
@@ -25,8 +27,11 @@ export default function RootLayout({ children }) {
       className={`${oswald.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col  bg-fit-theme font-inter">
-        <NavBer />
-        {children}
+        <FitLogContext>
+          <NavBer />
+          {children}
+          <FooterPage />
+        </FitLogContext>
       </body>
     </html>
   );
