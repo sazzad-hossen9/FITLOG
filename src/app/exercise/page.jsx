@@ -14,7 +14,7 @@ export default async function Exercise() {
           Twelve lifts covering every major muscle group.
         </p>
       </div>
-      <div className="grid grid-cols-3 gap-3 mb-3">
+      <div className="grid grid-cols-1  md:grid-cols-2 xl:grid-cols-3 gap-6 mb-3">
         {trainingData.map((exercise) => (
           <ExerciseCard key={exercise.id} exercise={exercise} />
         ))}
