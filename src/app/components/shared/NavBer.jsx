@@ -5,19 +5,35 @@ import Image from "next/image";
 import logo from "@/assets/logo.png";
 import { useContext } from "react";
 import { FitLogContext } from "@/app/context/context";
+import { usePathname } from "next/navigation";
 
 export default function NavBer() {
   const { plan, save } = useContext(FitLogContext);
+  const pathname = usePathname();
   const navLink = (
     <>
       <li>
-        <Link href="/" className="nav-link ">
+        <Link
+          href="/"
+          className={
+            pathname === "/"
+              ? "nav-link text-fit-primary bg-fit-primary/15 font-bold"
+              : "nav-link"
+          }
+        >
           Workouts
         </Link>
       </li>
 
       <li>
-        <Link href="/myplane" className="nav-link ">
+        <Link
+          href="/my-plan"
+          className={
+            pathname === "/my-plan"
+              ? "nav-link text-fit-primary bg-fit-primary/15 font-bold"
+              : "nav-link"
+          }
+        >
           My Plan
         </Link>
       </li>

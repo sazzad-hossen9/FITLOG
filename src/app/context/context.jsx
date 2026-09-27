@@ -1,7 +1,7 @@
 "use client";
 import { createContext, useState } from "react";
 export const FitLogContext = createContext({});
-export default function FitLogProvide({ children }) {
+export default function FitProvide({ children }) {
   const [plan, setPlan] = useState([]);
   const [save, setSave] = useState([]);
   const allContextValue = {

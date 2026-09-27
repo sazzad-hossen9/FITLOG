@@ -1,5 +1,3 @@
-import next from "next";
-
 const getData = async () => {
   try {
     const res = await fetch("https://api.api-store.workers.dev/api/fitlog", {

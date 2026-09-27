@@ -5,7 +5,7 @@ import banner from "@/assets/banner.png";
 
 const BannerPage = () => {
   return (
-    <section className="bg-fitTheme my-[48px] mt-25">
+    <section  className="bg-fitTheme my-[48px] mt-25">
       <div className="container mx-auto px-5 ">
         <div className=" flex flex-col md:flex-row  text-center md:text-start gap-7  justify-between items-center  rounded-xl bg-fit-secondary px-6 py-12 md:py-18.25 md:px-10 lg:px-14">
           {/* Content */}
@@ -24,7 +24,7 @@ const BannerPage = () => {
             </p>
 
             <Link
-              href="/workouts"
+              href="#library"
               className="mt-6 inline-flex rounded-md bg-fitPrimary px-5 py-3 text-xs font-bold uppercase text-black transition duration-300 hover:bg-transparent border-2  hover:border-fit-primary hover:text-fit-white  bg-fit-primary"
             >
               Browse Workouts

@@ -5,7 +5,7 @@ export default async function Exercise() {
   const trainingData = await getData();
   console.log(trainingData);
   return (
-    <div className="container px-5 mx-auto  my-5 mt-18">
+    <div id="library" className="container px-5 mx-auto  my-5 mt-18">
       <div className="text-center md:text-start mb-7">
         <h2 className=" font-oswald font-bold md:loading=[36px] text-[30px] text-fit-white">
           THE LIBRARY
